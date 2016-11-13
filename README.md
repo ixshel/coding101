@@ -5,10 +5,11 @@ Creacion de API con nodeJS y conexion a MongoDB
 Instrucciones:
 
 Para poder ver la base de datos bajen robomongo y creen nueva conexaion con los siguientes datos:
-user: curso123
-password: curso123
-host: ds151697.mlab.com
-port: 51697
+
+- user: curso123
+- password: curso123
+- host: ds151697.mlab.com
+- port: 51697
 
 la conexion esta hecha en el archivo de assitants en la variable "db"
 
@@ -19,7 +20,7 @@ Para ejecutar la applicacion debemos usar:
 Para poder ver datos:
 * Utilizar postman de preferencia 
 * Para ver datos:
-    - POST locahost:3001/assistants
+    - GET locahost:3001/assistants
 * directamente en la base de datos que esta hosteada en mongolabs (mlab)
 
 Herramientas sugeridas:

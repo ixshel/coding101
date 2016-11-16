@@ -4,6 +4,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var assistants = require('./routes/assistants');
+var profesores = require('./routes/profesores');
 var app = express();
 
 //Endpoint url
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', assistants);
+app.use('/', profesores);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

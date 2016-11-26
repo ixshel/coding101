@@ -31,7 +31,7 @@ app.use(function(req, res, next) {
 
 app.use(methodOverride());
 
-var server = app.listen(process.env.PORT || 3000, function() {
+var server = app.listen(process.env.PORT || 3001, function() {
     var host = 'localhost';
     var port = server.address().port;
     console.log('App listening at http://%s:%s', host, port);

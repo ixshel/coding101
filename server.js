@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');             // log requests to the console (express4)
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 var assistants = require('./routes/assistants');
+var profesores = require('./routes/profesores');
 var app = express();
 
 //Endpoint url
@@ -16,9 +17,13 @@ app.use(bodyParser.json());                                     // parse applica
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 app.use(methodOverride());
 app.use('/', assistants);
+<<<<<<< HEAD
 app.get('*', function (req, res) {
     res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
+=======
+app.use('/', profesores);
+>>>>>>> 339b52602cca191c11f70656e176308a7c0aa2a4
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

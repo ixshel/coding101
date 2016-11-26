@@ -1,6 +1,5 @@
 var express = require('express');
 var path = require('path');
-var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');             // log requests to the console (express4)
@@ -17,16 +16,14 @@ app.use(bodyParser.json());                                     // parse applica
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 app.use(methodOverride());
 app.use('/', assistants);
-<<<<<<< HEAD
-app.get('*', function (req, res) {
+app.use('/', profesores);
+
+app.get('*', function(req, res) {
     res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
-=======
-app.use('/', profesores);
->>>>>>> 339b52602cca191c11f70656e176308a7c0aa2a4
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
@@ -34,7 +31,7 @@ app.use(function (req, res, next) {
 
 app.use(methodOverride());
 
-var server = app.listen(process.env.PORT || 3001, function () {
+var server = app.listen(process.env.PORT || 3001, function() {
     var host = 'localhost';
     var port = server.address().port;
     console.log('App listening at http://%s:%s', host, port);

@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
-var db = mongojs('mongodb://curso123:curso123@ds151697.mlab.com:51697/curso', ['profesores']); 
+// var db = mongojs('mongodb://curso123:curso123@ds151697.mlab.com:51697/curso', ['profesores']);
+var db = mongojs('mongodb://@localhost:27017/curso', ['profesores']);
 
 /* GET All profesores */
-router.get('/profesores', function(req, res, next) {
+router.get('/profesores', function(req, res, next) { console.log('test');
     db.profesores.find(function(err, profesores) {
         if (err) {
             res.send(err);
@@ -28,7 +29,27 @@ router.get('/profesores/:id', function(req, res, next) {
 });
 
 /* POST/SAVE a assistant */
-router.post('/newProfesor', function(req, res, next) {
+router.post('/profesores', function(req, res, next) {
+    var profesor = req.body;
+    console.log(profesor);
+    if (!profesor.name) {
+        res.status(400);
+        res.json({
+            "error": "Invalid Data",
+            'profesor': profesor
+        });
+    } else {
+        db.profesores.save(profesor, function(err, result) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.json(result);
+            }
+        })
+    }
+});
+
+router.put('/profesores', function(req, res, next) {
     var profesor = req.body;
     if (!profesor.name) {
         res.status(400);

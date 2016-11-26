@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
-// var db = mongojs('mongodb://localhost:27017/curso', ['assistants']);
-var db = mongojs('mongodb://curso123:curso123@ds151697.mlab.com:51697/curso', ['assistants']); 
+var db = mongojs('mongodb://localhost:27017/curso', ['assistants']);
+// var db = mongojs('mongodb://curso123:curso123@ds151697.mlab.com:51697/curso', ['assistants']); 
 
 /* GET All assistants */
 router.get('/assistants', function(req, res, next) {
@@ -16,7 +16,7 @@ router.get('/assistants', function(req, res, next) {
 });
 
 /* GET One assisntant with the provided ID */
-router.get('/assistant/:id', function(req, res, next) {
+router.get('/assistants/:id', function(req, res, next) {
     db.assistants.findOne({
         _id: mongojs.ObjectId(req.params.id)
     }, function(err, assistants) {
@@ -29,7 +29,7 @@ router.get('/assistant/:id', function(req, res, next) {
 });
 
 /* POST/SAVE a assistant */
-router.post('/newAssistant', function(req, res, next) {
+router.post('/assistants', function(req, res, next) {
     var assistant = req.body;
     if (!assistant.name) {
         res.status(400);

@@ -2,6 +2,7 @@
 
 angular.module('assistantsController', [])
 
+
     .controller('mainController', function ($scope, $http) {
         // $scope.formData = {};
 
@@ -9,6 +10,14 @@ angular.module('assistantsController', [])
         $http.get('/assistants')
             .success(function (data) {
                 $scope.assistants = data;
+            })
+            .error(function (data) {
+                console.log('Error: ' + data);
+            });
+
+        $http.get('/profesores')
+            .success(function (data) {
+                $scope.profesores = data;
             })
             .error(function (data) {
                 console.log('Error: ' + data);

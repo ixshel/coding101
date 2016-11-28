@@ -1,6 +1,5 @@
 <!-- index.html -->
 <!doctype html>
-
 <!-- ASSIGN OUR ANGULAR MODULE -->
 <html ng-app="meanTraining">
 
@@ -9,26 +8,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Optimize mobile viewport -->
-
     <title>MEAN Training</title>
-
+    <!--CSS STYLES-->
+    <link rel="stylesheet" href="styles/styles.css">
     <!-- SCROLLS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <!-- load bootstrap -->
-    <style>
-        html {
-            overflow-y: scroll;
-        }
-        
-        body {
-            padding-top: 50px;
-        }
-        
-        #todo-list {
-            margin-bottom: 30px;
-        }
-    </style>
-
+    
     <!-- SPELLS -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <!-- load jquery -->
@@ -38,20 +24,41 @@
     <script src="controllers/main.js"></script>
     <!-- load up our controller -->
     <script src="services/assistants.js"></script>
+    <script src="services/profesores.js"></script>
     <!-- load our todo service -->
     <script src="core.js"></script>
     <!-- load our main application -->
-
-
 </head>
 <!-- SET THE CONTROLLER AND GET ALL TODOS -->
 
 <body ng-controller="mainController">
-    <div class="container">
+    <!--<div class="container">
         <p>Data...</p>
-        {{ assistants }}
+        <p><b>Asisstants: </b></p> {{ assistants }} <br> <br>
+        <p><b>Profesores: </b></p>{{ profesores }}  <br> <br>      
+    </div>-->
+    <div class="tittle">
+        <p><b>Asisstants:</b></p>
     </div>
-
+    <div ng-repeat="assistants in assistants">
+        <div class="name">
+            {{ assistants.name }}
+        </div>
+        <div class="name">
+            
+        </div>
+    </div>
+    <div class="tittle"> <br>
+        <p><b>Profesores:</b></p>
+    </div>
+    <div ng-repeat="profesores in profesores">
+        <div class="name">
+            {{ profesores.name }}
+        </div>
+        <div class="name">
+            {{ profesores.materia }}
+        </div>
+    </div>
 </body>
 
 </html>

@@ -1,1 +1,1 @@
-angular.module('meanTraining', ['assistantsController', 'assistantsService']);
+angular.module('meanTraining', ['assistantsController', 'assistantsService', 'profesoresService']);

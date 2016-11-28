@@ -1,0 +1,30 @@
+.tittle {
+    font-size: 25px;
+    margin-left: 15%;
+}
+
+.name {
+    background: rgb(59.2%, 62.4%, 60.9%);
+    padding-left: 10px;
+    padding-top: 4px;
+    display: inline-block;
+    position: relative;
+    left: 10%;
+    text-align: center;
+    border-bottom: 1px solid black;
+    border-left: 2px solid black;
+    height: 30px;
+    width: 10%;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    padding-top: 50px;
+}
+
+#todo-list {
+    margin-bottom: 30px;
+}

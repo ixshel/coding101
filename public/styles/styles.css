@@ -1,18 +1,50 @@
-.tittle {
-    font-size: 25px;
-    margin-left: 15%;
+* {
+    font-family: 'Bungee', cursive;
 }
 
+.tittle {
+    font-size: 25px;
+    margin-left: 17%;
+}
+.assi{
+    margin-top: 10px;
+}
+
+.pro{
+    margin-top: 10px;
+}
 .name {
     background: rgb(59.2%, 62.4%, 60.9%);
-    padding-left: 10px;
     padding-top: 4px;
     display: inline-block;
     position: relative;
     left: 10%;
     text-align: center;
-    border-bottom: 1px solid black;
-    border-left: 2px solid black;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    height: 30px;
+    width: 10%;
+}
+.lastname {
+    background: rgb(59.2%, 62.4%, 60.9%);
+    padding-top: 4px;
+    display: inline-block;
+    position: relative;
+    left: 10%;
+    text-align: center;
+    border-bottom: 3px solid black;
+    height: 30px;
+    width: 10%;
+}
+.course-horario {
+    background: rgb(59.2%, 62.4%, 60.9%);
+    padding-top: 4px;
+    display: inline-block;
+    position: relative;
+    left: 10%;
+    text-align: center;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
     height: 30px;
     width: 10%;
 }
@@ -27,4 +59,41 @@ body {
 
 #todo-list {
     margin-bottom: 30px;
+}
+
+.allThisShit .assistants .tittle dt a,
+.allThisShit .assistants .name dd a{
+    display: block;
+    color: black;
+    font-weight: bold;
+}
+
+.allThisShit .professor .tittle dt a,
+.allThisShit .professor .name dd a{
+    display: block;
+    color: black;
+    font-weight: bold;
+}
+.allThisShit{
+    margin-left: 30%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.square{
+    position: absolute;
+    top: 10%;
+    left: 18.6%;
+    width: 60%;
+    height: 60%;
+    border-right: 5px solid black;
+    border-left: 5px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.square{
+    -moz-box-shadow: 0 0 30px 5px #999;
+    -webkit-box-shadow: 0 0 30px 5px #999;
 }

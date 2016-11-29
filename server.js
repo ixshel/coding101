@@ -6,10 +6,12 @@ var morgan = require('morgan');             // log requests to the console (expr
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 var assistants = require('./routes/assistants');
 var profesores = require('./routes/profesores');
+var favicon = require('serve-favicon');
 var app = express();
 
 //Endpoint url
 app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
+app.use(favicon(__dirname + '/public/icons/favicon.ico'));      // set favicon to the server
 app.use(morgan('dev'));                                         // log every request to the console
 app.use(bodyParser.urlencoded({ 'extended': 'true' }));            // parse application/x-www-form-urlencoded
 app.use(bodyParser.json());                                     // parse application/json

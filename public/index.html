@@ -8,17 +8,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Optimize mobile viewport -->
-    <title>MEAN Training</title>
+    <title>Sadot Cortes</title>
     <!--CSS STYLES-->
     <link rel="stylesheet" href="styles/styles.css">
     <!-- SCROLLS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <!-- load bootstrap -->
-    
     <!-- SPELLS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <!-- load jquery -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <!--JSSource-->
+    <script src="js/index.js"></script>
     <!-- load angular -->
     <!--<script src="core.js"></script>-->
     <script src="controllers/main.js"></script>
@@ -28,35 +30,55 @@
     <!-- load our todo service -->
     <script src="core.js"></script>
     <!-- load our main application -->
+    <!-- Google Font Bungee-->
+    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
 </head>
 <!-- SET THE CONTROLLER AND GET ALL TODOS -->
 
 <body ng-controller="mainController">
-    <!--<div class="container">
-        <p>Data...</p>
-        <p><b>Asisstants: </b></p> {{ assistants }} <br> <br>
-        <p><b>Profesores: </b></p>{{ profesores }}  <br> <br>      
-    </div>-->
-    <div class="tittle">
-        <p><b>Asisstants:</b></p>
-    </div>
-    <div ng-repeat="assistants in assistants">
-        <div class="name">
-            {{ assistants.name }}
+    <div class="square"></div>
+    <div class="allThisShit">
+        <br><br><br><br><br>
+        <div class="assistants">
+            <div class="tittle">
+                <dt>
+                    <a href="">
+                        <p><b>Assistants:</b></p>
+                    </a>
+                </dt>
+            </div>
+            <div class="assi" ng-repeat="assistants in assistants">
+                <div class="name">
+                    <dd>{{ assistants.name }}</dd>
+                </div>
+                <div class="lastname">
+                    <dd>{{ assistants.lastname}}</dd>
+                </div>
+                <div class="course-horario">
+                    <dd> {{ assistants.course }} </dd>
+                </div>
+            </div>
         </div>
-        <div class="name">
-            
-        </div>
-    </div>
-    <div class="tittle"> <br>
-        <p><b>Profesores:</b></p>
-    </div>
-    <div ng-repeat="profesores in profesores">
-        <div class="name">
-            {{ profesores.name }}
-        </div>
-        <div class="name">
-            {{ profesores.materia }}
+        <br><br><br><br>
+        <div class="professor">
+            <div class="tittle">
+                <dt>
+                    <a href="">
+                        <p><b>Professor:</b></p>
+                    </a>
+                </dt>
+            </div>
+            <div class="pro" ng-repeat="profesores in profesores">
+                <div class="name">
+                    <dd>{{ profesores.name }}</dd>
+                </div>
+                <div class="lastname">
+                    <dd>{{ profesores.lastname }}</dd>
+                </div>
+                <div class="course-horario">
+                    <dd> {{ profesores.horario }} </dd>
+                </div>
+            </div>
         </div>
     </div>
 </body>

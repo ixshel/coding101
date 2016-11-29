@@ -1,4 +1,4 @@
-# Sadot Maximiliano Cortes Marquez
+# Sadot Maximiliano Cortés Márquez
 
 ## Assistants and Professor view.
 

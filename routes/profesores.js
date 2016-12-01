@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
-var db = mongojs('mongodb://curso123:curso123@ds151697.mlab.com:51697/curso', ['profesores']); 
+//var db = mongojs('mongodb://curso123:curso123@ds151697.mlab.com:51697/curso', ['profesores']);
+var db = mongojs('mongodb://localhost:27017/curso', ['assistants']);
+
 
 /* GET All profesores */
 router.get('/profesores', function(req, res, next) {

@@ -12,6 +12,9 @@
 
     <title>MEAN Training</title>
 
+    <!-- load styles -->
+    <link rel="stylesheet" type="text/css" href="/styles/misEstilos.css" />
+    
     <!-- SCROLLS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <!-- load bootstrap -->
@@ -47,9 +50,25 @@
 <!-- SET THE CONTROLLER AND GET ALL TODOS -->
 
 <body ng-controller="mainController">
-    <div class="container">
-        <p>Data...</p>
-        {{ assistants }}
+   <div class="container">
+       
+        <!--  <p>Data...</p> {{ assistants }} -->
+        <h1>Assistants</h1>
+
+        <div class="nombres">
+                <div class="elementTitle"> Name </div>
+                <div class="elementTitle"> Last Name </div>
+                <div class="elementTitle"> Address </div>
+                <div class="elementTitle"> Phone </div>
+        </div>
+                
+        <div class="nombres" ng-repeat="assistants in assistants">
+                <div class="element"> {{ assistants.name }} </div>
+                <div class="element"> {{ assistants.lastname }} </div>
+                <div class="element"> {{ assistants.address }} </div>
+                <div class="element"> {{ assistants.phone }} </div>
+        </div>
+        <br><br><br>
     </div>
 
 </body>

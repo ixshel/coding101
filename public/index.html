@@ -15,19 +15,7 @@
     <!-- SCROLLS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <!-- load bootstrap -->
-    <style>
-        html {
-            overflow-y: scroll;
-        }
-        
-        body {
-            padding-top: 50px;
-        }
-        
-        #todo-list {
-            margin-bottom: 30px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles/misEstilos.css">
 
     <!-- SPELLS -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -47,10 +35,59 @@
 <!-- SET THE CONTROLLER AND GET ALL TODOS -->
 
 <body ng-controller="mainController">
-    <div class="container">
-        <p>Data...</p>
-        {{ assistants }}
-    </div>
+
+    <article>
+        <div class="parallax">
+            <div class="bg__foo"></div>
+        </div>
+        <header>
+            <h1>MEAN Training!</h1>
+            <h2><a href="itexico.com">@iTexico</a></h2>
+        </header>
+        <section>
+            <div class="container">
+                <div>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>LastName</th>
+                            <th>Course</th>
+                            <th></th>
+                        </tr>
+                        <tr ng-repeat="assitant in assistants">
+                            <td> {{ assitant.name }} </td>
+                            <td> {{ assitant.lastname }} </td>
+                            <td> {{ assitant.course }} </td>
+                            <td> <a ng-click="remove(assitant._id)">remove</a> </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="parallax">
+            <div class="bg__break">
+                <div class="capture">
+                    <img src="https://pbs.twimg.com/profile_images/3750853704/36fdc371baafa84ddfb35f5d31d40cea_400x400.png" alt="">
+                </div>
+            </div>
+            <div class="text-center">
+                <input placeholder="Name" type="text" ng-model="course.name">
+                <input placeholder="Last Name" type="text" ng-model="course.lastname">
+                <input placeholder="Course" type="text" ng-model="course.course">
+                <a ng-click="new(course)"> + Add new</a>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                    et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                    sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                    aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                    kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            </div>
+        </section>
+    </article>
 
 </body>
 

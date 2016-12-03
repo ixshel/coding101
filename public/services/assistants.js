@@ -8,11 +8,13 @@ angular.module('assistantsService', [])
             get: function () {
                 return $http.get('/assistants');
             },
-            // create: function (todoData) {
-            //     return $http.post('/api/todos', todoData);
-            // },
-            // delete: function (id) {
-            //     return $http.delete('/api/todos/' + id);
-            // }
+
+            create: function (newCourse) {
+                return $http.post('/newAssistant', newCourse);
+            },
+
+            delete: function (id) {
+                return $http.delete('/delete/' + id);
+            }
         }
     });

@@ -59,6 +59,10 @@ router.put('/edit/:id', function(req, res, next) {
     if (assisntant.name) {
         updObj.name = assisntant.name;
     }
+     if (assisntant.materia) {
+        updObj.materia = assisntant.materia;
+    }
+    
     if (!updObj) {
         res.status(400);
         res.json({

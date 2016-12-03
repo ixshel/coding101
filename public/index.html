@@ -9,12 +9,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Optimize mobile viewport -->
-
+    <link rel="stylesheet" type="text/css" href="styles\Estilo.css">
     <title>MEAN Training</title>
 
     <!-- SCROLLS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <!-- load bootstrap -->
+    
     <style>
         html {
             overflow-y: scroll;
@@ -27,6 +28,8 @@
         #todo-list {
             margin-bottom: 30px;
         }
+        
+
     </style>
 
     <!-- SPELLS -->
@@ -47,11 +50,27 @@
 <!-- SET THE CONTROLLER AND GET ALL TODOS -->
 
 <body ng-controller="mainController">
-    <div class="container">
-        <p>Data...</p>
-        {{ assistants }}
-    </div>
 
+  <div class="container">
+       
+        <!--  <p>Data...</p> {{ assistants }} -->
+        <h1>Assistants</h1>
+        <div class="nombres">
+            <table border="1" style="width:100%">
+                <tr>
+              <th> Name</th>
+               <th> Last Name</th>
+                <th> Course</th>
+             </tr>
+                <tr ng-repeat="assistants in assistants">
+                <td> {{ assistants.name }}</td>
+                <td>{{ assistants.lastname }}</td>
+                <td>{{ assistants.course }}</td>
+                   </tr>
+            </table> 
+        </div>       
+        </div>
+        <br><br><br>
 </body>
 
 </html>

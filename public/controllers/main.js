@@ -21,6 +21,7 @@ angular.module('assistantsController', [])
             Assitants.create(newCourse)
                 .success(function () {
                     getAssistants();
+                    $scope.course = {};
                 })
                 .error(function (error) {
                     $scope.status = 'something is wrong you dont create anything...' + error.message;

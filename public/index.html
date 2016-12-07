@@ -71,9 +71,10 @@
                     <td class="delete"><a href="" ng-click="remove(assistants._id)" ><i class="fa fa-trash"></i></a></td>
                 </tr>
                 <tr class="form">
-                    <td><input type="text" placeholder="Add name" ng-model="course.name"></td>
-                    <td><input type="text" placeholder="Add Lstname" ng-model="course.lastname"></td>
-                    <td><input type="text" placeholder="Add course" ng-model="course.course"></td>
+                    <td><input type="text" placeholder="+ Name" ng-model="course.name"></td>
+                    <td><input type="text" placeholder="+ Lastname" ng-model="course.lastname"></td>
+                    <td><input type="text" placeholder="+ Course" ng-model="course.course"></td>
+                    <td class="add"><a href=""><i class="fa fa-plus" aria-hidden="true" ng-click="new(course)"></i></a></td>
                 </tr>
             </table>
         </div>

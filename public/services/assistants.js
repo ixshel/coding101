@@ -14,6 +14,11 @@ angular.module('assistantsService', [])
             delete: function (id) {
                 console.log(id);
                 return $http.delete('/delete/' + id);
+            },
+            put: function (id) {
+                console.log(id);
+                return $http.update('/edit/' + id);
             }
+
         }
     });

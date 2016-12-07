@@ -38,5 +38,16 @@ angular.module('assistantsController', [])
                     console.log('not working...');
                 })
         }
+        
+        $scope.update = function (id) {
+            console.log('id of item to update.....', id);
+            Assistants.update(id)
+                .succes(function () {
+                    getAssistants();
+                })
+                .error(function (err) {
+                    $scope.status= 'something is wrong, you cant update... ): ' + error.message;
+                })
+        }
 
     });

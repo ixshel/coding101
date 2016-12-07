@@ -16,7 +16,7 @@ router.get('/assistants', function(req, res, next) {
     });
 });
 
-/* GET One assisntant with the provided ID */
+/* GET One assistants with the provided ID */
 router.get('/assistants/:id', function(req, res, next) {
     db.assistants.findOne({
         _id: mongojs.ObjectId(req.params.id)
@@ -49,16 +49,16 @@ router.post('/assistants', function(req, res, next) {
     }
 });
 
-/* PUT/UPDATE a assisntant */
+/* PUT/UPDATE a assistant */
 router.put('/edit/:id', function(req, res, next) {
-    var assisntant = req.body;
+    var assistants = req.body;
     
     var updObj = {};
-    if (assisntant.isHere) {
-        updObj.isHere = assisntant.isHere;
+    if (assistants.isHere) {
+        updObj.isHere = assistants.isHere;
     }
-    if (assisntant.name) {
-        updObj.name = assisntant.name;
+    if (assistants.name) {
+        updObj.name = assistants.name;
     }
     if (!updObj) {
         res.status(400);

@@ -51,23 +51,32 @@
                     Assistants:
                 </a>
             </div>
-            <table class="assi" ng-hide="!see">
+            <table class="assi" ng-hide="!see" ng-mouseenter="edition = false">
                 <tr class="tittleheader">
                     <th class="tname">Name</th>
                     <th class="tlname">Lastname </th>
                     <th class="tcourse">Course </th>
                 </tr>
                 <tr ng-repeat="assistants in assistants">
-                    <td class="name">
+                    <td class="name" ng-hide="edition">
                         {{assistants.name}}
                     </td>
-                    <td class="lastname">
+                    <td class="lastname" ng-hide="edition">
                         {{assistants.lastname}}
                     </td>
-                    <td class="course">
+                    <td class="course" ng-hide="edition">
                         {{assistants.course}}
                     </td>
-                    <td class="edit"><a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                    <td ng-hide="!edition">
+                        <input type="text" placeholder="{{assistants.name}}" ng-model="edit.name" >
+                    </td>
+                    <td ng-hide="!edition">
+                        <input type="text" placeholder="{{assistants.lastname}}" ng-model="edit.lastname" >
+                    </td>
+                    <td ng-hide="!edition">
+                        <input type="text" placeholder="{{assistants.course}}" ng-model="edit.course" >
+                    </td>
+                    <td class="edit"><a href="" ng-click="edition = true" ng-dblclick="(update(edit, assistants._id)) && (edition = false)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
                     <td class="delete"><a href="" ng-click="remove(assistants._id)" ><i class="fa fa-trash"></i></a></td>
                 </tr>
                 <tr class="form">
@@ -79,9 +88,10 @@
             </table>
         </div>
         <div class="info" ng-hide="!see">
-            <p>Use <i class="fa fa-pencil-square-o"></i> to edit.</p><br>
             <p>Use <i class="fa fa-trash"></i> to delete.</p><br>
-            <p>Use the input text to add data into DB!</p>
+            <p>Use <i class="fa fa-pencil-square-o"></i> to edit.</p><br>
+            <p>Double click in <i class="fa fa-pencil-square-o"></i> to save the edition.</p><br>
+            <p>The edition dosnt work right now!!</p>
         </div>
         <div class="noassistants" ng-hide="assistants">
             <p>UPS! something went wrong with Assistants!.<br> Check: /routes/assistants.js</p>

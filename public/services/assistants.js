@@ -15,9 +15,9 @@ angular.module('assistantsService', [])
                 console.log(id);
                 return $http.delete('/delete/' + id);
             },
-            put: function (id) {
+            update: function (editAssistants, id) {
                 console.log(id);
-                return $http.update('/edit/' + id);
+                return $http.put('/edit/',editAssistants + id);
             }
 
         }

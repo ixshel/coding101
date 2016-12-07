@@ -14,13 +14,13 @@
     <!-- SCROLLS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <!-- load bootstrap -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="styles/font-awesome-4.7.0/css/font-awesome.min.css">
     <!-- SPELLS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <!-- load jquery -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-    <!--JSSource-->
-    <script src="js/index.js"></script>
     <!-- load angular -->
     <!--<script src="core.js"></script>-->
     <script src="controllers/main.js"></script>
@@ -36,49 +36,54 @@
 <!-- SET THE CONTROLLER AND GET ALL TODOS -->
 
 <body ng-controller="mainController">
-    <div class="square"></div>
-    <div class="allThisShit">
-        <br><br><br><br><br>
-        <div class="assistants">
-            <div class="tittle">
-                <dt>
-                    <a href="">
-                        <p><b>Assistants:</b></p>
-                    </a>
-                </dt>
+    <div class="allthisShit">
+        <div class="menubar">
+            <div class="about">
+                <a href="about.html">ABOUT!</a>
             </div>
-            <div class="assi" ng-repeat="assistants in assistants">
-                <div class="name">
-                    <dd>{{ assistants.name }}</dd>
-                </div>
-                <div class="lastname">
-                    <dd>{{ assistants.lastname}}</dd>
-                </div>
-                <div class="course-horario">
-                    <dd> {{ assistants.course }} </dd>
-                </div>
+            <div class="contact">
+                <a href="">CONTACT!</a>
             </div>
         </div>
-        <br><br><br><br>
-        <div class="professor">
+        <div class="assistants" ng-hide="!assistants" ng-mouseleave="see = !assistants">
             <div class="tittle">
-                <dt>
-                    <a href="">
-                        <p><b>Professor:</b></p>
-                    </a>
-                </dt>
+                <a href="" ng-click="see = true">
+                    Assistants:
+                </a>
             </div>
-            <div class="pro" ng-repeat="profesores in profesores">
-                <div class="name">
-                    <dd>{{ profesores.name }}</dd>
-                </div>
-                <div class="lastname">
-                    <dd>{{ profesores.lastname }}</dd>
-                </div>
-                <div class="course-horario">
-                    <dd> {{ profesores.horario }} </dd>
-                </div>
-            </div>
+            <table class="assi" ng-hide="!see">
+                <tr class="tittleheader">
+                    <th class="tname">Name</th>
+                    <th class="tlname">Lastname </th>
+                    <th class="tcourse">Course </th>
+                </tr>
+                <tr ng-repeat="assistants in assistants">
+                    <td class="name">
+                        {{assistants.name}}
+                    </td>
+                    <td class="lastname">
+                        {{assistants.lastname}}
+                    </td>
+                    <td class="course">
+                        {{assistants.course}}
+                    </td>
+                    <td class="edit"><a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                    <td class="delete"><a href="" ng-click="remove(assistants._id)" ><i class="fa fa-trash"></i></a></td>
+                </tr>
+                <tr class="form">
+                    <td><input type="text" placeholder="Add name" ng-model="course.name"></td>
+                    <td><input type="text" placeholder="Add Lstname" ng-model="course.lastname"></td>
+                    <td><input type="text" placeholder="Add course" ng-model="course.course"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="info" ng-hide="!see">
+            <p>Use <i class="fa fa-pencil-square-o"></i> to edit.</p><br>
+            <p>Use <i class="fa fa-trash"></i> to delete.</p><br>
+            <p>Use the input text to add data into DB!</p>
+        </div>
+        <div class="noassistants" ng-hide="assistants">
+            <p>UPS! something went wrong with Assistants!.<br> Check: /routes/assistants.js</p>
         </div>
     </div>
 </body>

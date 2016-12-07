@@ -3,16 +3,17 @@ angular.module('assistantsService', [])
 
     // super simple service
     // each function returns a promise object 
-    .factory('Assitants', function ($http) {
+    .factory('Assistants', function ($http) {
         return {
             get: function () {
                 return $http.get('/assistants');
             },
-            // create: function (todoData) {
-            //     return $http.post('/api/todos', todoData);
-            // },
-            // delete: function (id) {
-            //     return $http.delete('/api/todos/' + id);
-            // }
+            create: function (newAssistants) {
+                return $http.post('/assistants', newAssistants);
+            },
+            delete: function (id) {
+                console.log(id);
+                return $http.delete('/delete/' + id);
+            }
         }
     });

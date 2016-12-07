@@ -39,9 +39,9 @@ angular.module('assistantsController', [])
                 })
         }
         
-        $scope.update = function (id) {
-            console.log('id of item to update.....', id);
-            Assistants.update(id)
+        $scope.update = function (newAssistants, id) {
+            console.log('data', newAssistants);
+            Assistants.update(newAssistants, id)
                 .succes(function () {
                     getAssistants();
                 })

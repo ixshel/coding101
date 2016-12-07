@@ -1,99 +1,95 @@
+
+
 * {
     font-family: 'Bungee', cursive;
 }
 
-.tittle {
+.menubar {
+    background-color: #1e88e5;
+    height: 40px;
+    padding-left: 2%;
+}
+
+.about {
+    padding: 2%;
+    display: inline;
+}
+
+.about a {
+    position: relative;
+    top: 15%;
+    color: #e3f2fd;
+}
+.contact{
+    display: inline;
+}
+.contact a{
+    position: relative;
+    top: 15%;
+    color: #e3f2fd;
+}
+
+.assistants {
     font-size: 25px;
-    margin-left: 17%;
-}
-.assi{
-    margin-top: 10px;
-}
-
-.pro{
-    margin-top: 10px;
-}
-.name {
-    background: rgb(59.2%, 62.4%, 60.9%);
-    padding-top: 4px;
-    display: inline-block;
-    position: relative;
-    left: 10%;
-    text-align: center;
-    border-bottom: 3px solid black;
-    border-left: 3px solid black;
-    height: 30px;
-    width: 10%;
-}
-.lastname {
-    background: rgb(59.2%, 62.4%, 60.9%);
-    padding-top: 4px;
-    display: inline-block;
-    position: relative;
-    left: 10%;
-    text-align: center;
-    border-bottom: 3px solid black;
-    height: 30px;
-    width: 10%;
-}
-.course-horario {
-    background: rgb(59.2%, 62.4%, 60.9%);
-    padding-top: 4px;
-    display: inline-block;
-    position: relative;
-    left: 10%;
-    text-align: center;
-    border-bottom: 3px solid black;
-    border-right: 3px solid black;
-    height: 30px;
-    width: 10%;
-}
-
-html {
-    overflow-y: scroll;
-}
-
-body {
-    padding-top: 50px;
-}
-
-#todo-list {
-    margin-bottom: 30px;
-}
-
-.allThisShit .assistants .tittle dt a,
-.allThisShit .assistants .name dd a{
-    display: block;
-    color: black;
-    font-weight: bold;
-}
-
-.allThisShit .professor .tittle dt a,
-.allThisShit .professor .name dd a{
-    display: block;
-    color: black;
-    font-weight: bold;
-}
-.allThisShit{
-    margin-left: 30%;
-}
-
-a {
-  text-decoration: none;
-}
-
-.square{
     position: absolute;
-    top: 10%;
-    left: 18.6%;
-    width: 60%;
-    height: 60%;
-    border-right: 5px solid black;
-    border-left: 5px solid black;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    top: 30%;
+    left: 33%;
 }
-.square{
-    -moz-box-shadow: 0 0 30px 5px #999;
-    -webkit-box-shadow: 0 0 30px 5px #999;
+
+.tittle {
+    color: #e3f2fd;
+    padding-left: 40%;
+}
+
+.tittleheader th {
+    text-align: center;
+}
+
+.name,
+.lastname,
+.course {
+    text-align: center;
+}
+
+/*.tlname {
+    padding-left: 11%;
+}
+
+.lastname {
+    text-align: center;
+    padding-left: 10%;
+}*/
+
+/*.tcourse {
+    padding-left: 16%;
+}
+
+.course {
+    text-align: center;
+    padding-left: 15%;
+}*/
+.edit{
+    text-align: center;
+}
+.delete{
+    padding-left: 1%;
+    text-align: center;
+}
+.form input{
+    border: none;
+    text-align: center;
+}
+.info{
+    text-align: center;
+    position: absolute;
+    left: 10%;
+    top: 43%;
+}
+.noassistants {
+    color: #e3f2fd;
+    text-align: center;
+    position: absolute;
+    top: 37%;
+    left: 26%;
+    font-size: 25px;
 }

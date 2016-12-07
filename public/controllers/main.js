@@ -2,48 +2,41 @@
 
 angular.module('assistantsController', [])
 
+    .controller('mainController', function ($scope, Assistants) {
 
-    .controller('mainController', function ($scope, $http) {
-        // $scope.formData = {};
+        getAssistants();
 
-        // when landing on the page, get all assistants and show them
-        $http.get('/assistants')
-            .success(function (data) {
-                $scope.assistants = data;
-            })
-            .error(function (data) {
-                console.log('Error: ' + data);
-            });
+        function getAssistants() {
+            Assistants.get()
+                .success(function (data) {
+                    $scope.assistants = data;
+                })
+                .error(function (error) {
+                    $scope.status = 'Error...';
+                })
+        }
 
-        $http.get('/profesores')
-            .success(function (data) {
-                $scope.profesores = data;
-            })
-            .error(function (data) {
-                console.log('Error: ' + data);
-            });
+        $scope.new = function (newCourse) {
+            console.log('data', newCourse);
+            Assistants.create(newCourse)
+                .success(function () {
+                    getAssistants();
+                    $scope.course = {};
+                })
+                .error(function (error) {
+                    $scope.status = 'something is wrong you dont create anything...' + error.message;
+                })
+        }
 
-        // when submitting the add form, send the text to the node API
-        // $scope.createTodo = function () {
-        //     $http.post('/api/todos', $scope.formData)
-        //         .success(function (data) {
-        //             $scope.formData = {}; // clear the form so our user is ready to enter another
-        //             $scope.todos = data;
-        //         })
-        //         .error(function (data) {
-        //             console.log('Error: ' + data);
-        //         });
-        // };
-
-        // delete a todo after checking it
-        // $scope.deleteTodo = function (id) {
-        //     $http.delete('/api/todos/' + id)
-        //         .success(function (data) {
-        //             $scope.todos = data;
-        //         })
-        //         .error(function (data) {
-        //             console.log('Error: ' + data);
-        //         });
-        // };
+        $scope.remove = function (id) {
+            console.log('id of item to remove...', id);
+            Assistants.delete(id)
+                .success(function () {
+                    getAssistants();
+                })
+                .error(function (err) {
+                    console.log('not working...');
+                })
+        }
 
     });

@@ -1,0 +1,28 @@
+* {
+    font-family: 'Bungee', cursive;
+}
+
+.menubar {
+    background-color: #1e88e5;
+    height: 40px;
+    padding-left: 2%;
+}
+
+.about {
+    padding: 2%;
+    display: inline;
+}
+
+.about a {
+    position: relative;
+    top: 15%;
+    color: #e3f2fd;
+}
+.contact{
+    display: inline;
+}
+.contact a{
+    position: relative;
+    top: 15%;
+    color: #e3f2fd;
+}

@@ -2,52 +2,56 @@
 
 angular.module('assistantsController', [])
 
-    .controller('mainController', function ($scope, Assistants) {
+.controller('mainController', function ($scope, Assistants) {
 
-        getAssistants();
+    getAssistants();
 
-        function getAssistants() {
-            Assistants.get()
-                .success(function (data) {
-                    $scope.assistants = data;
-                })
-                .error(function (error) {
-                    $scope.status = 'Error...';
-                })
-        }
+    function getAssistants() {
+        Assistants.get()
+            .success(function (data) {
+                $scope.assistants = data;
+            })
+            .error(function (error) {
+                $scope.status = 'Error...';
+            })
+    }
 
-        $scope.new = function (newCourse) {
-            console.log('data', newCourse);
-            Assistants.create(newCourse)
-                .success(function () {
-                    getAssistants();
-                    $scope.course = {};
-                })
-                .error(function (error) {
-                    $scope.status = 'something is wrong you dont create anything...' + error.message;
-                })
-        }
+    $scope.new = function (newCourse) {
+        console.log('data', newCourse);
+        Assistants.create(newCourse)
+            .success(function () {
+                getAssistants();
+                $scope.course = {};
+            })
+            .error(function (error) {
+                $scope.status = 'something is wrong you dont create anything...' + error.message;
+            })
+    }
 
-        $scope.remove = function (id) {
-            console.log('id of item to remove...', id);
-            Assistants.delete(id)
-                .success(function () {
-                    getAssistants();
-                })
-                .error(function (err) {
-                    console.log('not working...');
-                })
-        }
-        
-        $scope.update = function (newAssistants, id) {
-            console.log('data', newAssistants);
-            Assistants.update(newAssistants, id)
-                .succes(function () {
-                    getAssistants();
-                })
-                .error(function (err) {
-                    $scope.status= 'something is wrong, you cant update... ): ' + error.message;
-                })
-        }
+    $scope.remove = function (id) {
+        console.log('id of item to remove...', id);
+        Assistants.delete(id)
+            .success(function () {
+                getAssistants();
+            })
+            .error(function (err) {
+                console.log('not working...');
+            })
+    }
+    
+    $scope.edit = function (index) {
+        $scope.oldData = $scope.assistants[index];
+    }
 
-    });
+    $scope.update = function (newData) {
+        Assistants.edit(newData)
+            .success(function () {
+                getAssistants();
+            })
+            .error(function (err) {
+                console.log('Err', err);
+            })
+
+    }
+
+});

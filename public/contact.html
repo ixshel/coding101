@@ -1,0 +1,66 @@
+<!-- index.html -->
+<!doctype html>
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="meanTraining">
+
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Optimize mobile viewport -->
+    <title>Sadot Cortes</title>
+    <!--CSS STYLES-->
+    <link rel="stylesheet" href="styles/contact.css">
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <!-- load bootstrap -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="styles/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- SPELLS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <!--JSSource-->
+    <script src="js/index.js"></script>
+    <!-- load angular -->
+    <!--<script src="core.js"></script>-->
+    <script src="controllers/main.js"></script>
+    <!-- load up our controller -->
+    <script src="services/assistants.js"></script>
+    <script src="services/profesores.js"></script>
+    <!-- load our todo service -->
+    <script src="core.js"></script>
+    <!-- load our main application -->
+    <!-- Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Varela" rel="stylesheet">
+</head>
+<!-- SET THE CONTROLLER AND GET ALL TODOS -->
+
+<body ng-controller="mainController">
+    <div class="allthisShit">
+        <div class="menubar">
+            <div class="home">
+                <a href="index.html">HOME!</a>
+            </div>
+            <div class="about">
+                <a href="about.html">ABOUT!</a>
+            </div>
+        </div>
+        <div class="rest">
+            <div class="contactinfo">
+                <div class="eMail">
+                    <a href="mailto:sadotcortes@scoorm.me"> <i class="fa fa-envelope" id="email"></i></a>
+                </div>
+                <div class="face">
+                    <a href="https://www.facebook.com/SadotCorts" target="blank"> <i class="fa fa-facebook-official" id="face"> </i></a>
+                </div>
+                <div class="git">
+                    <a href="https://www.facebook.com/SadotCorts" target="blank"> <i class="fa fa-github" id="git"> </i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

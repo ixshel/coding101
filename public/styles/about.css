@@ -26,3 +26,26 @@
     top: 15%;
     color: #e3f2fd;
 }
+.imgsadt{
+    position: absolute;
+    top: 20%;
+    left: 15%;
+}
+.imgsadt img{ 
+    width: 47%;
+    height: 77%;
+    border-left: 9px solid black;
+    border-radius: 100%;
+}
+.tex {
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    text-align: center;
+    width: 30%;
+    padding: 3%;
+    border-right: 8px solid black;
+    border-top: 8px solid black;
+    height: 50%;
+    
+}

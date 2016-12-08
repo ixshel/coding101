@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
 // var db = mongojs('mongodb://localhost:27017/curso', ['assistants']);
-var db = mongojs('mongodb://curso123:curso123@ds151697.mlab.com:51697/curso', ['assistants']); 
+var db = mongojs('mongodb://curso123:curso123@ds151697.mlab.com:51697/curso', ['assistants']);
 
 /* GET All assistants */
 router.get('/assistants', function (req, res, next) {
@@ -49,32 +49,23 @@ router.post('/newAssistant', function (req, res, next) {
 });
 
 /* PUT/UPDATE a assisntant */
-router.put('/edit/:id', function (req, res, next) {
-    var assisntant = req.body;
-
-    var updObj = {};
-    if (assisntant.isHere) {
-        updObj.isHere = assisntant.isHere;
+router.put('/edit/', function (req, res, next) {
+    console.log('new data', req.body);
+    var newData = {
+        name: req.body.name,
+        lastname: req.body.lastname,
+        course: req.body.course
     }
-    if (assisntant.name) {
-        updObj.name = assisntant.name;
-    }
-    if (!updObj) {
-        res.status(400);
-        res.json({
-            "error": "Invalid Data"
-        });
-    } else {
-        db.assistants.update({
-            _id: mongojs.ObjectId(req.params.id)
-        }, updObj, {}, function (err, result) {
-            if (err) {
-                res.send(err);
-            } else {
-                res.json(result);
-            }
-        });
-    }
+    db.assistants.update({
+        _id: mongojs.ObjectId(req.body._id)
+    }, newData, {}, function (err, result) {
+        if (err) {
+            console.log('err', err)
+        } else {
+            console.log('updated...');
+            res.json(result);
+        }
+    })
 });
 
 /* DELETE an assistant */

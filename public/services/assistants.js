@@ -13,6 +13,10 @@ angular.module('assistantsService', [])
                 return $http.post('/newAssistant', newCourse);
             },
 
+            edit: function (newData) {
+                return $http.put('/edit/', newData);
+            },
+            
             delete: function (id) {
                 return $http.delete('/delete/' + id);
             }

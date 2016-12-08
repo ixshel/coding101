@@ -39,4 +39,20 @@ angular.module('assistantsController', [])
                 })
         }
 
+        $scope.edit = function (index) {
+            $scope.oldData = $scope.assistants[index];
+        }
+
+        $scope.save = function (newData) {
+            console.log('new data...', newData);
+            Assitants.edit(newData)
+                .success(function () {
+                    console.log('done')
+                })
+                .error(function (err) {
+                    console.log('Err', err);
+                })
+
+        }
+
     });

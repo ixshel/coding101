@@ -46,13 +46,23 @@
         </header>
         <section>
             <div class="container">
+                <br>
+                <div class="text-center">
+                    <input placeholder="Name" type="text" ng-model="course.name">
+                    <input placeholder="Last Name" type="text" ng-model="course.lastname">
+                    <input placeholder="Course" type="text" ng-model="course.course">
+                    <a ng-click="new(course)"> + Add new</a>
+                </div>
+                <br><br>
                 <div>
                     <h3> Assistants </h3>
+                    <p>test: {{ editFlag }}</p>
                     <table>
                         <tr>
                             <th>Name</th>
                             <th>LastName</th>
                             <th>Course</th>
+                            <th></th>
                             <th></th>
                         </tr>
                         <tr ng-repeat="assitant in assistants">
@@ -60,8 +70,18 @@
                             <td> {{ assitant.lastname }} </td>
                             <td> {{ assitant.course }} </td>
                             <td> <a ng-click="remove(assitant._id)">remove</a> </td>
+                            <td> <a ng-click="edit($index)">edit</a> </td>
                         </tr>
                     </table>
+                    <br>
+                    <p>This is the part for updating info...</p>
+                    <br>
+                    <div class="text-center">
+                        <input placeholder="Name" type="text" ng-model="oldData.name">
+                        <input placeholder="Last Name" type="text" ng-model="oldData.lastname">
+                        <input placeholder="Course" type="text" ng-model="oldData.course">
+                        <a ng-click="save(oldData)"> Save</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -70,12 +90,6 @@
                 <div class="capture">
                     <img src="https://pbs.twimg.com/profile_images/3750853704/36fdc371baafa84ddfb35f5d31d40cea_400x400.png" alt="">
                 </div>
-            </div>
-            <div class="text-center">
-                <input placeholder="Name" type="text" ng-model="course.name">
-                <input placeholder="Last Name" type="text" ng-model="course.lastname">
-                <input placeholder="Course" type="text" ng-model="course.course">
-                <a ng-click="new(course)"> + Add new</a>
             </div>
         </section>
         <section>

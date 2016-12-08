@@ -32,6 +32,7 @@
     <!-- load our main application -->
     <!-- Google Font Bungee-->
     <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela" rel="stylesheet">
 </head>
 <!-- SET THE CONTROLLER AND GET ALL TODOS -->
 
@@ -42,7 +43,7 @@
                 <a href="about.html">ABOUT!</a>
             </div>
             <div class="contact">
-                <a href="">CONTACT!</a>
+                <a href="contact.html">CONTACT!</a>
             </div>
         </div>
         <div class="assistants" ng-hide="!assistants" ng-mouseleave="see = !assistants">
@@ -68,16 +69,18 @@
                         {{assistants.course}}
                     </td>
                     <td id="formi" ng-hide="!edition">
-                        <input type="text" placeholder="name" ng-model="oldData.name" >
+                        <input type="text" placeholder="name" ng-model="oldData.name">
                     </td>
                     <td id="formi" ng-hide="!edition">
-                        <input type="text" placeholder="lastname" ng-model="oldData.lastname" >
+                        <input type="text" placeholder="lastname" ng-model="oldData.lastname">
                     </td>
                     <td id="formi" ng-hide="!edition">
-                        <input type="text" placeholder="course" ng-model="oldData.course" >
+                        <input type="text" placeholder="course" ng-model="oldData.course">
                     </td>
-                    <td class="edit"><a href="" ng-click="edit($index); edition = true; " ng-dblclick="update(oldData); edition = false;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-                    <td class="delete"><a href="" ng-click="remove(assistants._id)" ><i class="fa fa-trash"></i></a></td>
+                    <td class="edit">
+                        <a href="" ng-click="edit($index); edition = true; " ng-dblclick="update(oldData); edition = false;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                    </td>
+                    <td class="delete"><a href="" ng-click="remove(assistants._id)"><i class="fa fa-trash"></i></a></td>
                 </tr>
                 <tr class="form">
                     <td><input type="text" placeholder="+ Name" ng-model="course.name"></td>

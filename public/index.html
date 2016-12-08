@@ -67,13 +67,13 @@
                     <td class="course" ng-hide="edition">
                         {{assistants.course}}
                     </td>
-                    <td ng-hide="!edition">
+                    <td id="formi" ng-hide="!edition">
                         <input type="text" placeholder="{{assistants.name}}" ng-model="edit.name" >
                     </td>
-                    <td ng-hide="!edition">
+                    <td id="formi" ng-hide="!edition">
                         <input type="text" placeholder="{{assistants.lastname}}" ng-model="edit.lastname" >
                     </td>
-                    <td ng-hide="!edition">
+                    <td id="formi" ng-hide="!edition">
                         <input type="text" placeholder="{{assistants.course}}" ng-model="edit.course" >
                     </td>
                     <td class="edit"><a href="" ng-click="edition = true" ng-dblclick="(update(edit, assistants._id)) && (edition = false)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
@@ -88,9 +88,10 @@
             </table>
         </div>
         <div class="info" ng-hide="!see">
+            <p>INSTRUCTIONS!:</p>
             <p>Use <i class="fa fa-trash"></i> to delete.</p><br>
-            <p>Use <i class="fa fa-pencil-square-o"></i> to edit.</p><br>
-            <p>Double click in <i class="fa fa-pencil-square-o"></i> to save the edition.</p><br>
+            <p>Use <i class="fa fa-pencil-square-o"></i> to edit & double click to save.</p><br>
+            <p>Use +_something to add a new Assistant and press <i class="fa fa-plus"></i> to add.</p>
             <p>The edition dosnt work right now!!</p>
         </div>
         <div class="noassistants" ng-hide="assistants">

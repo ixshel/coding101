@@ -17,7 +17,6 @@ angular.module('assistantsController', [])
         }
 
         $scope.new = function (newCourse) {
-            console.log('data', newCourse);
             Assitants.create(newCourse)
                 .success(function () {
                     getAssistants();
@@ -44,10 +43,10 @@ angular.module('assistantsController', [])
         }
 
         $scope.save = function (newData) {
-            console.log('new data...', newData);
             Assitants.edit(newData)
                 .success(function () {
-                    console.log('done')
+                    getAssistants();
+                    $scope.oldData = {};
                 })
                 .error(function (err) {
                     console.log('Err', err);

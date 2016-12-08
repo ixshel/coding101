@@ -50,34 +50,53 @@ router.post('/assistants', function(req, res, next) {
 });
 
 /* PUT/UPDATE a assistant */
-router.put('/edit/:id', function(req, res, next) {
-    var assistants = req.body;
+// router.put('/edit/:id', function(req, res, next) {
+//     var assistants = req.body;
     
-    var updObj = {};
-    if (assistants.isHere) {
-        updObj.isHere = assistants.isHere;
-    }
-    if (assistants.name) {
-        updObj.name = assistants.name;
-    }
-    if (!updObj) {
-        res.status(400);
-        res.json({
-            "error": "Invalid Data"
-        });
-    } else {
-        db.assistants.update({
-            _id: mongojs.ObjectId(req.params.id)
-        }, updObj, {}, function(err, result) {
-            if (err) {
-                res.send(err);
-            } else {
-                res.json(result);
-            }
-        });
-    }
-});
+//     var updObj = {};
+//     if (assistants.isHere) {
+//         updObj.isHere = assistants.isHere;
+//     }
+//     if (assistants.name) {
+//         updObj.name = assistants.name;
+//     }
+//     if (!updObj) {
+//         res.status(400);
+//         res.json({
+//             "error": "Invalid Data"
+//         });
+//     } else {
+//         db.assistants.update({
+//             _id: mongojs.ObjectId(req.params.id)
+//         }, updObj, {}, function(err, result) {
+//             if (err) {
+//                 res.send(err);
+//             } else {
+//                 res.json(result);
+//             }
+//         });
+//     }
+// });
 
+/* PUT/UPDATE a assisntant */
+router.put('/edit/', function (req, res, next) {
+    console.log('new data', req.body);
+    var newData = {
+        name: req.body.name,
+        lastname: req.body.lastname,
+        course: req.body.course
+    }
+    db.assistants.update({
+        _id: mongojs.ObjectId(req.body._id)
+    }, newData, {}, function (err, result) {
+        if (err) {
+            console.log('err', err)
+        } else {
+            console.log('updated...');
+            res.json(result);
+        }
+    })
+});
 /* DELETE an assistant */
 router.delete('/delete/:id', function(req, res) {
     db.assistants.remove({

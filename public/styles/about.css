@@ -49,3 +49,9 @@
     height: 50%;
     
 }
+.bio{
+    position: absolute;
+    top: 85%;
+    left: 18%;
+    text-align: center;
+}
